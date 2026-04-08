@@ -50,8 +50,7 @@ const loginUser = async (req, res) => {
       expiresIn: exp,
     }
   )
-
-  return res.status(200).cookie("token", token, { httpOnly: true, maxAge: exp });
+  return res.status(200).cookie("token", token, { httpOnly: true, maxAge: exp }).json({ message: "Login succesffuly!" });
 }
 
-export default registerUser;
+export { registerUser, loginUser };
